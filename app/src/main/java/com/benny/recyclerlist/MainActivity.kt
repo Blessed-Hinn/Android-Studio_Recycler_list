@@ -11,17 +11,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val faker = Faker()
+        val peopleList = arrayListOf<Person>()//Storing data of type Person
 
-
-        for (i in 1..10) {
+        for (i in 1..50) {
             val name = faker.name.firstName() + " " + faker.name.lastName()
             val email = faker.internet.email()
             val address = faker.address.streetAddress()
             val age = faker.number.between(18, 80)
             val phone = faker.phoneNumber.phoneNumber()
 
-            Log.d("FAKER", "$name : $email : $address : $age :  $phone")
-
+            //Log.d("FAKER", "$name : $email : $address : $age :  $phone")
+            val person = Person(name, email, address, age, phone)//Storing data
+            peopleList.add(person)
         }
+
+        /*peopleList.forEach {
+            Log.d("PEOPLE", it.name)
+        }*/
     }
 }
