@@ -3,6 +3,8 @@ package com.benny.recyclerlist
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import io.bloco.faker.Faker
 
 class MainActivity : AppCompatActivity() {
@@ -28,5 +30,14 @@ class MainActivity : AppCompatActivity() {
         /*peopleList.forEach {
             Log.d("PEOPLE", it.name)
         }*/
+
+        val recyclerPeople: RecyclerView = findViewById(R.id.recyclerViewPeople)
+        recyclerPeople.layoutManager = LinearLayoutManager(this)
+
+        val adapter = CustomAdapter(peopleList)
+
+        recyclerPeople.adapter = adapter
+
+
     }
 }
