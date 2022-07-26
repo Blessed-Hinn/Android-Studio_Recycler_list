@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         for (i in 1..50) {
             val name = faker.name.firstName() + " " + faker.name.lastName()
-            val email = faker.internet.email()
+            val email = faker.internet.email(name)
             val address = faker.address.streetAddress()
             val age = faker.number.between(18, 80)
             val phone = faker.phoneNumber.phoneNumber()
